@@ -1,0 +1,81 @@
+<!--
+    <head>
+       
+        <script>
+var files=[
+    "apple.png",
+    "banana.png",
+    "mango.png",
+    "flaticon.png"
+];
+var imgs= new Array();
+for(var i=0; i<files.length; i++){
+    imgs[i]=new Image();
+    imgs[i].src=files[i];
+}
+function autoLoad(){
+window.onload(0,10);
+}
+var timer= setInterval("translate", 500);
+function translate(){
+    var str = id.innerHTML;
+    if(str.length>0){
+        id.innerHTML=str.substring(1);
+    }else{
+        clearInterval(timer);
+    }
+    id.innerHTML=str;
+}
+        </script>
+    </head>
+    <body>
+        <h3>new image()and images loding</h3>
+        <hr>
+        <p>이미지가 자동으로 넘어가겠끔 만들어보자고</p>
+        <div>
+        <img  id="id" style="border: solid 20px burlywood;"
+        src="flaticon.png" alt="이미지" width="200px" height="200px"
+        onload="setInterval(this)"> 
+        </div> 이 코드는 내가 틀렸지만 비교하기위해 남겨둔 것이다
+      -->
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            재밌는거 만들었다
+        </title>
+        <script>
+var files = ["apple.png", "banana.png", "mango.png", "flaticon.png"];
+var imgs = [];
+var index = 0;
+
+for(var i = 0; i < files.length; i++){
+    imgs[i] = new Image();
+    imgs[i].src = files[i];
+}
+
+function changeImage() {
+    var imgElement = document.getElementById("id");
+    imgElement.src = imgs[index].src;
+    index = (index + 1) % imgs.length; // 다음 이미지 인덱스로 이동
+}
+
+window.onload = function() {
+var timer = setInterval(changeImage, 100); // 0.5초마다 changeImage 함수를 호출
+id.onclick = function(e){
+    clearInterval(timer);
+}
+};
+        </script>
+    </head>
+    <body>
+        <h3>new image and images load</h3>
+        <hr>
+        <p>이미지를 랜덤하게 고르는 박스</p>
+        <div>
+        <img id="id" style="border: ridge 20px burlywood;"
+        src="flaticon.png" alt="이미지" width="200px" height="200px"> 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>9장 이 어려운 이유는?</title>
+    <script>
+        function query() {
+            var ret = confirm("네이버로 이동할겨 말겨?");
+            //이거쓰면 if문 안쓰고 확인 취소가능 return ret;    
+            if (confirm("정말로 페이지를 떠나시겠습니까?")) {
+
+            } else {
+                console.log("아니요 남을겁니다")
+            }
+        }
+        function noAction(e) {
+            e.preventDefault();//이부분은 제일 밖에 있어야 적용된다
+        } //그리고 confirm은 if문을 조금 다르게 쓸 필요가 있다
+    </script>
+</head>
+
+<body>
+    <h3>그건 내가 아직 몰라서그래서~~</h3>
+    <hr>
+    <a href="https://www.naver.com/" onclick="return query()">네이버로 이동할지 물어보는게 예의지</a>
+    <hr>
+    <form>
+        <input type="checkbox" checked>빵<br>
+        <input type="checkbox" onclick="noAction(event)">술
+    </form>
+</body>
+
+</html>

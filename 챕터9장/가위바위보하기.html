@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            가위바위보 만들었다
+        </title>
+        <style>
+            body,html{
+                margin: 0;
+                padding: 0;
+            }
+            #container {
+                display: flex; /* Flexbox 사용 */
+                justify-content: center; /* 가로 방향 중앙 정렬 */
+                align-items: center; /* 세로 방향 중앙 정렬 */
+                height: 200px; /* 높이를 브라우저 높이에서 h3와 p의 높이를 뺀 값으로 설정 */
+            
+            }
+            h3{
+                text-align: center;
+                font-size: 30px;
+                background-color: skyblue;
+                height: 50px;
+                margin: 0;
+            }
+            hr{
+                margin: 0;
+                border: 2px solid;
+            }
+            p{/*진사람이 정하기*/
+                font-size: 50px;
+                text-align: center;
+                font-family:Georgia, 'Times New Roman', Times, serif;
+                font-weight: bold;
+                padding: 0;
+
+            }
+            #vs{
+                padding: 50px;
+                
+            }
+        </style>
+        <script>
+var files = ["가위.png", "바위.png", "보.png"];
+var imgs = [];
+var index = 0;
+
+for(var i = 0; i < files.length; i++){
+    imgs[i] = new Image();
+    imgs[i].src = files[i];
+}
+
+function changeImage1() {
+    var imgElement = document.getElementById("id1");//id1의 설정
+    imgElement.src = imgs[index].src;
+    index = (index + 1) % imgs.length; // 다음 이미지 인덱스로 이동
+}
+function changeImage2() {
+    var imgElement = document.getElementById("id2");//id2의 설정
+    imgElement.src = imgs[index].src;
+    index = (index + 1) % imgs.length;
+}
+
+window.onload = function() {
+    var timer1 = setInterval(changeImage1, 100); // 0.1초마다 changeImage1 함수를 호출
+    var timer2 = setInterval(changeImage2, 100); // 0.1초마다 changeImage2 함수를 호출
+
+    document.getElementById("id1").onclick = function(e){
+        clearInterval(timer1);
+        clearInterval(timer2);
+    }
+    
+    document.getElementById("id2").onclick = function(e){
+        clearInterval(timer1);
+        clearInterval(timer2);
+    }
+};
+        </script>
+    </head>
+    <body>
+        <h3>가위바위보 박스</h3>
+        <hr>
+        <p>진사람이 정하기</p>
+        <div id="container">
+            <img id="id1" style="border: ridge 20px burlywood;"
+            src="보.png" alt="이미지" width="200px" height="200px"> 
+            <div id="vs" style="font-size: 100px; text-shadow: 2px 2px 2px black;">
+                vs
+            </div>
+            <img id="id2" style="border: ridge 20px burlywood;"
+            src="바위.png" alt="이미지" width="200px" height="200px"> 
+        </div>
+    </body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9장을 함해보자고</title>
+    </head>
+    <body>
+        <h2>속성들 출력해봐</h2>
+        <hr>
+        <p id="p">
+            버튼을 클릭하면 좋을 일이 있을거예요
+        </p>
+        <button onclick="f(event)">클릭해봐</button>
+        <script>
+            function f(e){
+                var text = "type=" + e.type+"<br>"
+                +"target:" + e.target+ "<br>"
+                +"currentTarget:" + e.currentTarget+ "<br>"
+                +"defaultPrevented:" + e.defaultPrevented;
+
+                var p =document.getElementById("p");
+                p.innerHTML = text;
+            }// f()안에 내가 알던 게 맞긴한데 event는 좀 다른듯 e하나로도 가능하네
+        </script>
+    </body>
+</html>

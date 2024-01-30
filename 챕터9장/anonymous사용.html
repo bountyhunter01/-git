@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        9장의 타이틀은 이거다 바로 !!!!
+    </title>
+    <meta charset="UTF-8">
+    <script>
+        var p;
+        function init() {
+            p = document.getElementById("p");
+            p.onmouseover = function () {
+                this.style.backgroundColor = "#ffff00";
+            };
+            p.addEventListener("mouseout", function () { this.style.backgroundColor = "#00ffff"; });
+        }
+    </script>
+</head>
+
+<body onload="init()">
+    <h1>
+        이벤트를 이용해 리스너들을 설득시켜라
+    </h1>
+    <hr>
+    <p id="p">
+        p태그를 변신시켜봐
+    </p>
+</body>
+
+</html>

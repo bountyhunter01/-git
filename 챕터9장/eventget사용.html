@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9장은 시들지 않아</title>
+    </head>
+    <body>
+        <p id="p"> 마우스를 사용해봐</p>
+        <button onclick="f(event)">클릭</button>
+        <script>
+            function f(e) {
+             alert(e.type)
+            }
+            document.getElementById("p").onmouseover=f;
+        </script>
+    </body>
+</html>

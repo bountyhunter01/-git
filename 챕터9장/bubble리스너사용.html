@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>오늘의 주제는 9장의 소리를 들어보자</title>
+    <script>
+        function f(event) { }
+    </script>
+</head>
+
+<body>
+    <form>
+        <h3>이것이 바로 내가 찾던 보물</h3>
+        <input type="text" value="">
+        <input type="button" value="보물 비번" id="button">
+    </form>
+    <!--id는 공백도 아이디의 한부분으로 친다-->
+    <div id="div" style="color:green;"></div>
+        <script>
+            var div = document.getElementById("div");
+            var button = document.getElementById("button");
+
+            document.body.addEventListener("click", capture, true);
+
+            button.addEventListener("click", bubble, false);
+
+            document.body.addEventListener("click", bubble, false);
+            function capture(e) {
+                var obj = e.currentTarget;
+                var tagName = obj.tagName;
+                div.innerHTML += "<br> capture 다단계" + tagName + "태그" + e.type + "이벤트";
+            }
+            function bubble(e) {
+                var obj = e.currentTarget;
+                var tagName = obj.tagName;
+                div.innerHTML += "<br> bubble 다단계" + tagName + "태그" + e.type + "이벤트";
+            }
+        </script>
+</body>
+
+</html>

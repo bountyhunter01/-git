@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            9장은 감을 잡았어
+        </title>
+        <style>
+            div{
+                width: 250px;
+                background-color: skyblue;
+            }
+        </style>
+    </head>
+    <body>
+        <h2>웹 페이지를 조절해보자</h2>
+        <hr>
+        <p>
+            이미지 위에 마우스를 움직일 때 onmousemove리스너가
+            실행되고, 마우스의 위치를 보여줍니다.
+        </p>
+        <img src="flaticon.png" onmousemove="where(event)">
+        <div id="div"></div>
+        <script>
+            var ok =document.getElementById("div");
+            function where(e){
+                var text = "버튼= "+ e.button+"<br>";
+                text+="(screenx, screeny)= "+
+                e.screenX+","+e.screenY+"<br>";
+                text+="(clientX, clientY)= "+
+                e.clientX+","+e.clientY+"<br>";
+                text+="(offsetX, offsetY)= "+
+                e.offsetX+","+e.offsetY+"<br>";
+                text+="(x, y)= "+e.x+","+e.y+"\n";
+                div.innerHTML = text;
+            }
+        </script>
+    </body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>9장이다 시작이다 흠</title>
+        <meta charset="UTF-8">
+        <script>
+            var p;
+            function init(){
+                p = document.getElementById("p");
+                p.onmouseover = over;
+                p.onmouseout = out;
+            }
+            function over(){
+                p.style.color="red";
+                p.style.backgroundColor="white";
+            }
+            function out(){
+                p.style.backgroundColor="black";
+                p.style.color="white"; // 배경색이 검은색일 때 텍스트를 보기 쉽게 하기 위해 텍스트 색을 하얀색으로 변경합니다.
+            }
+        </script>
+    </head>
+    <body onload="init()">
+        <h1>리스너가 없는 리스너 프로퍼티</h1>
+        <hr>
+        <p id="p">
+            마우스를 어쩌고 저쩌고 해봐 
+        </p>
+    </body>
+</html>

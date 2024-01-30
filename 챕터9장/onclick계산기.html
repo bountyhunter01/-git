@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>
+        9장 왜이리 긴거야
+    </title>
+    <script>
+        function calculate() {
+            var exp = document.getElementById("exp");
+            var result = document.getElementById("result");
+            result.value = eval(exp.value);
+        }
+    </script>
+</head>
+
+<body>
+    <h3>계산기 만들기</h3>
+    <hr>
+    <p>계산을 해봐 버튼도 누르고</p>
+    <form>
+        식<input type="text" id="exp" value=""><br>
+        값<input type="text" id="result">
+        <input type="button" value="계산" onclick="calculate()">
+    </form>
+</body>
+
+</html>
